@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkTree with Matrix Background</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Fake BTC Balance -->
+    <div class="btc-balance">
+        BTC Balance: <span id="btcAmount">0.00000000</span>
+    </div>
+
+    <div class="link-container">
+        <h1>Your Links</h1>
+        <ul id="linkList">
+            <!-- Links will be dynamically loaded here -->
+        </ul>
+    </div>
+    
+    <script src="matrix.js"></script>
+    <script src="btc.js"></script> <!-- Script for BTC balance -->
+    <script src="loadLinks.js"></script>
+</body>
+</html>
