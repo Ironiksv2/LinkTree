@@ -1,29 +1,10 @@
-/* Iron/Steel-like texture for the header text */
+/* Iron-like texture for the header text */
 #headerText {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    background: linear-gradient(90deg, #b8b8b8, #e0e0e0, #b8b8b8); /* Gradient for steel look */
+    background: linear-gradient(90deg, #3c3c3c, #b0b0b0, #3c3c3c); /* Steel gradient */
     -webkit-background-clip: text;
-    color: transparent; /* Text becomes transparent to show the gradient background */
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.6),  /* Darker shadow for depth */
-        -2px -2px 4px rgba(255, 255, 255, 0.7);  /* Lighter shadow to create a reflective effect */
+    color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     font-family: 'Arial', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;  /* Capitalizes text for a bold, metallic feel */
-}
-
-/* Adjust the top bar for alignment */
-.top-bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: black;
-    color: #00ff00;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 10;
-    font-family: 'Courier New', Courier, monospace;
-    text-shadow: 0px 0px 10px #00ff00;
 }
