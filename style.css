@@ -1,16 +1,13 @@
-/* Iron/Steel-like texture for the header text */
+/* Styling for the header text */
 #headerText {
     font-size: 40px;
     font-weight: bold;
-    background: linear-gradient(90deg, #b8b8b8, #e0e0e0, #b8b8b8); /* Gradient for steel look */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Ensure the text is visible with the gradient */
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.6),  /* Darker shadow for depth */
-        -2px -2px 4px rgba(255, 255, 255, 0.7);  /* Lighter shadow for reflective effect */
+    color: #e0e0e0; /* Light gray to mimic iron/steel */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), /* Shadow for depth */
+                 -2px -2px 4px rgba(255, 255, 255, 0.7);  /* Lighter shadow for reflective effect */
     font-family: 'Arial', sans-serif;
     letter-spacing: 2px;
-    text-transform: uppercase;  /* Capitalizes text for a bold, metallic feel */
+    text-transform: uppercase;
 }
 
 /* Adjust the top bar for alignment */
