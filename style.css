@@ -41,18 +41,26 @@ canvas {
     z-index: 10;
 }
 
-/* Center the links box */
+/* Center the links box in the middle */
 .link-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Center the element */
-    background-color: rgba(0, 0, 0, 0.75); /* Slightly transparent for readability */
+    background-color: rgba(0, 255, 0, 0.85); /* Opaque green background */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.7); /* Green glow */
-    color: #00ff00;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.8); /* Green glow */
     text-align: center;
+    width: 400px; /* Set a width for a nicer look */
+}
+
+/* Style the "Your Links" header */
+.link-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0px 0px 10px #00ff00;
 }
 
 /* Style the links */
@@ -66,14 +74,19 @@ ul li {
 }
 
 ul li a {
-    color: #00ff00;
+    color: #ffffff; /* White text for the links */
+    background-color: #006400; /* Dark green background for each link */
+    padding: 10px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 18px;
     text-shadow: 0px 0px 10px #00ff00;
-    transition: color 0.2s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+/* Hover effect for links */
 ul li a:hover {
-    color: #fff;
+    background-color: #00ff00; /* Bright green on hover */
+    color: #000000; /* Black text on hover */
     text-shadow: 0px 0px 20px #fff;
 }
