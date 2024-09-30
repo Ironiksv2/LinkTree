@@ -1,49 +1,42 @@
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 
-// Set canvas dimensions
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Set canvas dimensions to full screen
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+// Call resizeCanvas when the window is resized
+window.addEventListener('resize', resizeCanvas);
+
+// Initial canvas setup
+resizeCanvas();
 
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&';
 const fontSize = 16;
 const columns = Math.floor(canvas.width / fontSize);
+const drops = Array(columns).fill(1);
 
-// Create an array of drops for each column, with random start times
-const drops = Array.from({ length: columns }, () => ({
-    y: Math.random() * canvas.height / fontSize,
-    speed: Math.random() * 5 + 2 // Random speed for each line
-}));
-
-// Function to draw the matrix effect
-function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Semi-transparent background for trailing effect
+// Draw the matrix effect
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#00ff00'; // Matrix green
+    ctx.fillStyle = '#00ff00'; // Green matrix color
     ctx.font = `${fontSize}px monospace`;
 
-    drops.forEach((drop, i) => {
+    for (let i = 0; i < drops.length; i++) {
         const text = characters.charAt(Math.floor(Math.random() * characters.length));
-        ctx.fillText(text, i * fontSize, drop.y * fontSize);
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        // Move drop down
-        drop.y += drop.speed;
-
-        // If the drop goes off screen, reset it with a random position
-        if (drop.y * fontSize > canvas.height && Math.random() > 0.95) {
-            drop.y = 0;
-            drop.speed = Math.random() * 5 + 2; // Reset speed randomly
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
         }
-    });
+
+        drops[i]++;
+    }
 }
 
-// Loop the drawing function to animate the matrix effect
-setInterval(draw, 50);
-
-// Make the canvas responsive to window size changes
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    drops.length = Math.floor(canvas.width / fontSize);
-});
+// Loop the draw function to create the animation
+setInterval(drawMatrix, 50);
